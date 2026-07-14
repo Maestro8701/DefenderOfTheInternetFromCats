@@ -50,28 +50,30 @@ CMake ≥ 3.20
 OpenCV ≥ 4.11.0 (с модулем dnn)
 SFML ≥ 3.0 (только sfml-audio)
 Git (для клонирования репозитория)
-Linux (Debian/Ubuntu)
+Установка зависимостей
+🐧 Linux (Debian/Ubuntu)
 sudo apt update
 sudo apt install -y cmake git libopencv-dev libsfml-audio-dev
-Windows (vcpkg)
+🪟 Windows (vcpkg)
 vcpkg install opencv4 sfml3
-macOS (Homebrew)
+🍎 macOS (Homebrew)
 brew install cmake opencv sfml
-2. Клонирование репозитория
+Сборка проекта
+1. Клонирование репозитория
 git clone https://github.com/yourusername/DefenderOfTheInternetFromCats.git
 cd DefenderOfTheInternetFromCats
 git submodule update --init --recursive  # Если есть сабмодули
-3. Сборка проекта
-Linux/macOS
+2. Сборка
+🐧 Linux / macOS
 mkdir build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
-Windows (PowerShell)
+🪟 Windows (PowerShell)
 mkdir build
 cd build
 cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
 cmake --build . --config Release
-4. Запуск
+Запуск
 ./DefenderOfTheInternetFromCats
 Примечания:
 
