@@ -2,6 +2,12 @@
 Кросплатформенная система наблюдения, объединяющая веб-камеры, мобильные устройства 
 и планируемую робототехнику в единую сеть с интерфейсом в локальной сети.
 
+## 🎥 Демонстрация
+
+<video src="./multimedia/demo.mp4" controls width="600">
+    Ваш браузер не поддерживает тег video. Попробуйте [скачать видео](assets/demo.mp4).
+</video>
+
 ## "Краткая предистория создания и важное предисловие"
 Кошки жили в 80% дома(но не в моей комнате), одна из них перегрызала провод интернета 3 раза и я сидел без интернета. Когда их стало две пришла идея в голову что их нельзя пускать в комнату с компьютером для сохранности интернета и оборудования(знакомому собаку разбила монитор),  но и чтобы они не портили мои личные вещи, которые использовали в качестве игрушек(не укатывали какую нибудь мелочь в место где я ее не найду). 
 Можно было решить вопрос просто спрятав провод под плинтус, но это же скучно?!!! Это решение показалось слишком банальным и неинтересным. Я выбрал интересный и скилловый вариант, если произошло кошачье вторжение в комнату создать быструю систему эвакуции их из комнаты так как кошки не глупые и ловить их не так просто, они убегают а вылавливал и выгонял я до этого только видосами с ютуба их, а двух кошек поймать полная катастрофа.
@@ -37,6 +43,46 @@
 | **Язык**| C++ |
 | **Машинное обучение** | YOLOv4-tiny, OpenCV               |
 | **Локальная сеть**    | WebSockets, REST API (для обмена данными) |
+| **Аудио**   SFML 3.0 |
+
+📦 Установка и сборка
+1. Зависимости
+Убедитесь, что установлены:
+
+CMake ≥ 3.20
+OpenCV ≥ 4.11.0 (с модулем dnn)
+SFML ≥ 3.0 (только sfml-audio)
+Git (для клонирования репозитория)
+Linux (Debian/Ubuntu)
+sudo apt update
+sudo apt install -y cmake git libopencv-dev libsfml-audio-dev
+Windows (vcpkg)
+vcpkg install opencv4 sfml3
+macOS (Homebrew)
+brew install cmake opencv sfml
+2. Клонирование репозитория
+git clone https://github.com/yourusername/DefenderOfTheInternetFromCats.git
+cd DefenderOfTheInternetFromCats
+git submodule update --init --recursive  # Если есть сабмодули
+3. Сборка проекта
+Linux/macOS
+mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j$(nproc)
+Windows (PowerShell)
+mkdir build
+cd build
+cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+cmake --build . --config Release
+4. Запуск
+./DefenderOfTheInternetFromCats
+Примечания:
+
+Убедитесь, что пути к моделям (yolov4-tiny.cfg, yolov4-tiny.weights) и звукам (./multimedia/sound/) корректны.
+Для тестирования можно использовать встроенное видео:
+./DefenderOfTheInternetFromCats --video ./multimedia/video/test_cat.mp4
+🔧 Конфигурация
+Проект поддерживает конфигурационный файл config.toml
 
 ## 🖥 **Архитектура системы**
 ```mermaid

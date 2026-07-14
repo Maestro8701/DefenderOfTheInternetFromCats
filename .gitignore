@@ -1,0 +1,42 @@
+# Build files
+build/
+*.o
+*.exe
+*.out
+*.a
+*.so
+
+# IDE files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Git
+*.orig
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Visual Studio
+*.user
+*.userosscache
+*.sdf
+*.opensdf
+*.suo
+*.ntvs*
+*.njsproj
+*.vcxproj*
+*.userprefs
+*.vspscc
+*.vssscc
+
+# SFML (если будут кэши)
+*.a
+*.dll
+*.lib

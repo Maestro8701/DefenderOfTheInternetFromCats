@@ -1,0 +1,49 @@
+name: Build and Test
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          choco install cmake -y
+          choco install opencv -y
+          choco install sfml -y
+
+      - name: Download clang-format
+        run: |
+          $clangFormatPath = "C:\Users\Evgenius\DefenderOfTheInternetFromCats\clang-format.exe"
+          if (-not (Test-Path $clangFormatPath)) {
+            Invoke-WebRequest -Uri "https://github.com/llvm/llvm-project/releases/download/llvmorg-17.0.6/LLVM-17.0.6-win64.exe" -OutFile "LLVM-Installer.exe"
+            Start-Process -Wait -FilePath "LLVM-Installer.exe" -ArgumentList "/S", "/D=C:\LLVM"
+            Copy-Item -Path "C:\LLVM\bin\clang-format.exe" -Destination $clangFormatPath -Force
+            Remove-Item -Path "LLVM-Installer.exe" -Force
+            Remove-Item -Path "C:\LLVM" -Recurse -Force
+          }
+
+      - name: Format code with clang-format
+        run: |
+          $clangFormatPath = "C:\Users\Evgenius\DefenderOfTheInternetFromCats\clang-format.exe"
+          Get-ChildItem -Path src,include -Recurse -Include *.h,*.hpp,*.cpp | ForEach-Object {
+            & $clangFormatPath -i -style=file $_
+          }
+          git diff --exit-code || { echo "Code formatting issues detected!" exit 1 }
+
+      - name: Configure CMake
+        run: |
+          cmake -B build -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 17 2022"
+
+      - name: Build project
+        run: cmake --build build --config Release -- /m
+
+      - name: Run tests (если есть)
+        run: |
+          cd build
+          ctest --output-on-failure

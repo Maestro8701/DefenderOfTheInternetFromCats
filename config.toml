@@ -1,0 +1,16 @@
+[network]
+udp_ip = "192.168.1.100"
+udp_port = 12345
+
+[alarm]
+duration_sec = 30
+volume_start = 15
+volume_step = 5
+volume_max = 100
+
+[detector]
+model_cfg = "models/yolov4-tiny.cfg"
+model_weights = "models/yolov4-tiny.weights"
+confidence_threshold = 0.85
+trigger_distance_mm = 500
+confirm_frames = 2
