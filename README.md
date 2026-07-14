@@ -4,7 +4,7 @@
 
 ## 🎥 Демонстрация
 
-<video src="./multimedia/demo.mp4" controls width="600">
+<video src="multimedia/demo.mp4" controls width="600">
     Ваш браузер не поддерживает тег video. Попробуйте [скачать видео](assets/demo.mp4).
 </video>
 
