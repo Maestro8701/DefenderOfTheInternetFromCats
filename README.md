@@ -50,25 +50,24 @@ CMake ≥ 3.20
 OpenCV ≥ 4.11.0 (с модулем dnn)
 SFML ≥ 3.0 (только sfml-audio)
 Git (для клонирования репозитория)
-Установка зависимостей
-🐧 Linux (Debian/Ubuntu)
+Linux (Debian/Ubuntu)
 sudo apt update
 sudo apt install -y cmake git libopencv-dev libsfml-audio-dev
-🪟 Windows (vcpkg)
+Windows (vcpkg)
 vcpkg install opencv4 sfml3
-🍎 macOS (Homebrew)
+macOS (Homebrew)
 brew install cmake opencv sfml
-Сборка проекта
-1. Клонирование репозитория
+
+Клонирование репозитория
 git clone https://github.com/yourusername/DefenderOfTheInternetFromCats.git
 cd DefenderOfTheInternetFromCats
-git submodule update --init --recursive  # Если есть сабмодули
-2. Сборка
-🐧 Linux / macOS
+git submodule update --init --recursive # Если есть сабмодули
+Сборка проекта
+Linux/macOS
 mkdir build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
-🪟 Windows (PowerShell)
+Windows (PowerShell)
 mkdir build
 cd build
 cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
@@ -76,7 +75,6 @@ cmake --build . --config Release
 Запуск
 ./DefenderOfTheInternetFromCats
 Примечания:
-
 Убедитесь, что пути к моделям (yolov4-tiny.cfg, yolov4-tiny.weights) и звукам (./multimedia/sound/) корректны.
 Для тестирования можно использовать встроенное видео:
 ./DefenderOfTheInternetFromCats --video ./multimedia/video/test_cat.mp4
