@@ -30,7 +30,7 @@ int main() {
         CatDetector detector("models/yolov4-tiny.cfg", "models/yolov4-tiny.weights");
 
         // Открытие видео
-        VideoCapture cap("test_cat1.mp4");
+        VideoCapture cap(0);//"test_cat1.mp4"
         if (!cap.isOpened()) {
             std::cerr << "Failed to open video!" << std::endl;
             return -1;
