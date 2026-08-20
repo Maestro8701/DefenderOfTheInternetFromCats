@@ -67,46 +67,6 @@
 </tr>
 </table>
 
-
-## 🏗 Структура проекта
-
-DefenderOfTheInternetFromCats/
-├── .gitignore # Исключения Git
-├── CHANGELOG.md # История изменений
-├── README.md # Документация пользователя
-├── ARCHITECTURE.md # Эта архитектура
-├── CMakeLists.txt # Сборка проекта
-├── .clang-format # Форматирование кода
-├── .github/
-│ └── workflows/
-│ └── build.yml # CI/CD GitHub Actions
-├── src/ # Исходный код (.cpp)
-│ ├── main.cpp
-│ ├── alarm_system.cpp
-│ ├── cat_detector.cpp
-│ ├── sound_player.cpp
-│ ├── udp_communicator.cpp
-│ └── utils.cpp
-├── include/ # Заголовочные файлы (.h)
-│ ├── alarm_system.h
-│ ├── cat_detector.h
-│ ├── sound_player.h
-│ ├── udp_communicator.h
-│ └── utils.h
-├── models/ # Модели машинного обучения
-│ ├── yolov4-tiny.cfg
-│ └── yolov4-tiny.weights
-├── multimedia/
-│ ├── sound/ # Звуковые файлы (звуки пугалок)
-│ │ ├── sound1.mp3
-│ │ ├── sound2.mp3
-│ │ ├── sound3.mp3
-│ │ ├── sound4.mp3
-│ │ └── sound5.mp3
-│ └── video/ # Тестовые видео
-│ └── test_cat.mp4
-│ └── test_cat1.mp4
-
 ---
 
 ## 🧩 Основные компоненты и их ответственность
