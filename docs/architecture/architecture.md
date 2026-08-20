@@ -9,6 +9,67 @@
 
 ## 🏗 Структура проекта
 
+<table>
+<tr>
+<td valign="top">
+
+**⚙️ Корневые файлы**
+```bash
+├── .gitignore
+├── CHANGELOG.md
+├── README.md
+├── ARCHITECTURE.md
+├── CMakeLists.txt
+└── .clang-format
+```
+**🤖 CI/CD**
+```bash
+└── .github/
+    └── workflows/
+        └── build.yml
+```
+</td>
+<td valign="top">
+
+**💻 Исходный код**
+```bash
+├── src/
+│   ├── main.cpp
+│   ├── alarm_system.cpp
+│   ├── cat_detector.cpp
+│   ├── sound_player.cpp
+│   ├── udp_communicator.cpp
+│   └── utils.cpp
+└── include/
+    ├── alarm_system.h
+    ├── cat_detector.h
+    ├── sound_player.h
+    ├── udp_communicator.h
+    └── utils.h
+```
+</td>
+<td valign="top">
+
+**🧠 Модели и Данные**
+```bash
+├── models/
+│   ├── yolov4-tiny.cfg
+│   └── yolov4-tiny.weights
+└── multimedia/
+    ├── sound/
+    │   ├── sound1.mp3
+    │   └── ... (sound2-5)
+    └── video/
+        ├── test_cat.mp4
+        └── test_cat1.mp4
+```
+</td>
+</tr>
+</table>
+
+
+## 🏗 Структура проекта
+
 DefenderOfTheInternetFromCats/
 ├── .gitignore # Исключения Git
 ├── CHANGELOG.md # История изменений
