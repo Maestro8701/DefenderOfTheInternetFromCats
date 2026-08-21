@@ -32,6 +32,7 @@ add_executable(${PROJECT_NAME}
   src/cat_detector.cpp
   src/utils.cpp
   src/sound_player.cpp
+  src/udp_communicator_unix.cpp
   src/udp_communicator.cpp
   src/main.cpp
 )
