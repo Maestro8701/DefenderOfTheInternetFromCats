@@ -52,8 +52,8 @@
 -
 
 #### Linux (Debian/Ubuntu)
--sudo apt update
--sudo apt install -y cmake git libopencv-dev libsfml-audio-dev
+- sudo apt update
+- sudo apt install -y cmake git libopencv-dev libsfml-audio-dev
 
 #### Windows (vcpkg)
 -vcpkg install opencv4 sfml3
