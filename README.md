@@ -76,8 +76,7 @@ brew install cmake opencv sfml
 - cd build
 - cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
 - cmake --build . --config Release
-- Запуск
-- ./DefenderOfTheInternetFromCats
+- Запуск ./DefenderOfTheInternetFromCats
 Примечания:
 Убедитесь, что пути к моделям (yolov4-tiny.cfg, yolov4-tiny.weights) и звукам (./multimedia/sound/) корректны.
 Для тестирования можно использовать встроенное видео:
