@@ -1,0 +1,33 @@
+@startuml
+class CatDetector {
+    +detectCat(frame: Mat): bool
+    +getCatDistance(): float
+    -net: Net
+    -currentDistance: float
+    -catFrameCounter: int
+}
+class AlarmSystem {
+    +handleAlarm(catDetected: bool, udp: UDPCommunicator)
+    -alarmActive: bool
+    -lastSoundTime: int64
+    -alarmStartTime: int64
+}
+class SoundPlayer {
+    +playScarySound(volumeLevel: int)
+    +stopSound()
+    +setPathToSounds(path: string)
+}
+class UDPCommunicator {
+    +sendMessage(msg: string)
+    +checkForCommands()
+    -sock: SOCKET
+    -serverAddr: sockaddr_in
+    -isInitialized: bool
+}
+CatDetector --> AlarmSystem : использует
+CatDetector ..> OpenCV_Mat : <<uses>>
+AlarmSystem ..> SoundPlayer : использует
+AlarmSystem ..> UDPCommunicator : использует
+SoundPlayer ..> SFML_Sound : <<uses>>
+UDPCommunicator ..> Winsock : <<uses>>
+@enduml
