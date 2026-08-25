@@ -100,3 +100,8 @@ graph TD
     OpenCV 4.11.0
     sfml 3.0
     Microsoft Visual Studio Community 2022 17.14.2 (17.14.2+36121.58)
+
+Запустить диаграмму, скопировав код из папки diagrams, можно по ссылке https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa700003
+Или на ПК Установи PlantUML: https://plantuml.com/zh/command-line
+В командной строке выполнить:
+plantuml docs/class_diagram.puml 
