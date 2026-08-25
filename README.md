@@ -49,7 +49,6 @@
 - OpenCV ≥ 4.11.0 (с модулем dnn)
 - SFML ≥ 3.0 (только sfml-audio)
 - Git (для клонирования репозитория)
--
 
 #### Linux (Debian/Ubuntu)
 - sudo apt update
@@ -73,17 +72,18 @@ brew install cmake opencv sfml
 - make -j$(nproc)
 
 #### Windows (PowerShell)
-mkdir build
-cd build
-cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
-cmake --build . --config Release
-Запуск
-./DefenderOfTheInternetFromCats
+- mkdir build
+- cd build
+- cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+- cmake --build . --config Release
+- Запуск
+- ./DefenderOfTheInternetFromCats
 Примечания:
 Убедитесь, что пути к моделям (yolov4-tiny.cfg, yolov4-tiny.weights) и звукам (./multimedia/sound/) корректны.
 Для тестирования можно использовать встроенное видео:
 ./DefenderOfTheInternetFromCats --video ./multimedia/video/test_cat.mp4
-🔧 Конфигурация
+
+### 🔧 Конфигурация
 Проект поддерживает конфигурационный файл config.toml
 
 ## 🖥 **Архитектура системы**
