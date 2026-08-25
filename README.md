@@ -45,29 +45,34 @@
 📦 Установка и сборка
 1. Зависимости
 Убедитесь, что установлены:
+- CMake ≥ 3.20
+- OpenCV ≥ 4.11.0 (с модулем dnn)
+- SFML ≥ 3.0 (только sfml-audio)
+- Git (для клонирования репозитория)
+-
 
-CMake ≥ 3.20
-OpenCV ≥ 4.11.0 (с модулем dnn)
-SFML ≥ 3.0 (только sfml-audio)
-Git (для клонирования репозитория)
-Linux (Debian/Ubuntu)
-sudo apt update
-sudo apt install -y cmake git libopencv-dev libsfml-audio-dev
-Windows (vcpkg)
-vcpkg install opencv4 sfml3
-macOS (Homebrew)
+#### Linux (Debian/Ubuntu)
+-sudo apt update
+-sudo apt install -y cmake git libopencv-dev libsfml-audio-dev
+
+#### Windows (vcpkg)
+-vcpkg install opencv4 sfml3
+
+#### macOS (Homebrew)
 brew install cmake opencv sfml
 
-Клонирование репозитория
-git clone https://github.com/yourusername/DefenderOfTheInternetFromCats.git
-cd DefenderOfTheInternetFromCats
-git submodule update --init --recursive # Если есть сабмодули
-Сборка проекта
-Linux/macOS
-mkdir build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j$(nproc)
-Windows (PowerShell)
+#### Клонирование репозитория
+- git clone https://github.com/yourusername/DefenderOfTheInternetFromCats.git
+- cd DefenderOfTheInternetFromCats
+- git submodule update --init --recursive # Если есть сабмодули
+
+### Сборка проекта
+#### Linux/macOS
+- mkdir build && cd build
+- cmake .. -DCMAKE_BUILD_TYPE=Release
+- make -j$(nproc)
+
+#### Windows (PowerShell)
 mkdir build
 cd build
 cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
