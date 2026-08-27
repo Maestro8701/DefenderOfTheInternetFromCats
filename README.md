@@ -83,9 +83,9 @@ brew install cmake opencv sfml
 ./DefenderOfTheInternetFromCats --video ./multimedia/video/test_cat.mp4
 
 #### Тестовая сборка
-cmake -DBUILD_TESTING=ON ..
-cmake --build .
-./run_all_tests
+- cmake -DBUILD_TESTING=ON ..
+- cmake --build .
+- ./run_all_tests
 
 ### 🔧 Конфигурация
 Проект поддерживает конфигурационный файл config.toml
