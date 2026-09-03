@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UI version="4.0">
+ <class>MainWindowClass</class>
+ <widget class="QMainWindow" name="MainWindowClass">
+  <property name="objectName">
+   <string notr="true">MainWindowClass</string>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QtWidgetsApplication1</string>
+  </property>
+  <widget class="QMenuBar" name="menuBar"/>
+  <widget class="QToolBar" name="mainToolBar"/>
+  <widget class="QWidget" name="centralWidget">
+    <layout class="QVBoxLayout" name="verticalLayout">
+<item>
+  <widget class="QPushButton" name="btnTestSound">
+    <property name="text">Test Sound</property>
+    <property name="minimumSize"><size><width>90</width><height>30</height></size></property>
+    <property name="maximumSize"><size><width>120</width><height>40</height></size></property>
+    <property name="styleSheet">
+      background-color: #ffe066;
+      color: #000;
+      border-radius: 4px;
+      padding: 5px;
+      font-weight: bold;
+    </property>
+  </widget>
+</item>
+
+<item>
+  <widget class="QSlider" name="slVolume">
+    <property name="orientation">Horizontal</property>
+    <property name="minimum">0</property>
+    <property name="maximum">100</property>
+    <property name="value">50</property>
+    <property name="tickPosition">TicksBothSides</property>
+    <property name="tickInterval">10</property>
+    <property name="pageStep">10</property>
+    <property name="styleSheet">
+      QSlider::groove:horizontal {
+        background: #e0e0e0;
+        height: 8px;
+        border-radius: 4px;
+      }
+      QSlider::handle:horizontal {
+        background: #55ff55;
+        width: 16px;
+        border-radius: 8px;
+        margin: -4px 0;
+      }
+    </property>
+  </widget>
+</item>
+
+<item>
+  <widget class="QLabel" name="lblVolume">
+    <property name="text">Volume: 50%</property>
+    <property name="alignment">AlignCenter</property>
+    <property name="minimumSize"><size><width>60</width><height>18</height></size></property>
+    <property name="styleSheet">
+      color: #222;
+      font-weight: bold;
+      padding-left: 4px;
+      padding-right: 4px;
+    </property>
+  </widget>
+</item>
+
+<item>
+  <widget class="QSlider" name="slSensitivity">
+    <property name="orientation">Horizontal</property>
+    <property name="minimum">0</property>
+    <property name="maximum">10</property>
+    <property name="value">5</property>
+    <property name="tickPosition">TicksBothSides</property>
+    <property name="tickInterval">1</property>
+    <property name="pageStep">1</property>
+    <property name="styleSheet">
+      QSlider::groove:horizontal {
+        background: #c0c0c0;
+        height: 8px;
+        border-radius: 4px;
+      }
+      QSlider::handle:horizontal {
+        background: #66aaff;
+        width: 16px;
+        border-radius: 8px;
+        margin: -4px 0;
+      }
+    </property>
+  </widget>
+</item>
+
+<item>
+  <widget class="QSlider" name="slConfirmCount">
+    <property name="orientation">Horizontal</property>
+    <property name="minimum">1</property>
+    <property name="maximum">5</property>
+    <property name="value">3</property>
+    <property name="tickPosition">TicksBothSides</property>
+    <property name="tickInterval">1</property>
+    <property name="pageStep">1</property>
+    <property name="styleSheet">
+      QSlider::groove:horizontal {
+        background: #a0a0a0;
+        height: 8px;
+        border-radius: 4px;
+      }
+      QSlider::handle:horizontal {
+        background: #ff8888;
+        width: 16px;
+        border-radius: 8px;
+        margin: -4px 0;
+      }
+    </property>
+  </widget>
+</item>
+
+<item>
+  <widget class="QLabel" name="lblConfirmCount">
+    <property name="text">Confirm Count: 3</property>
+    <property name="alignment">AlignCenter</property>
+    <property name="minimumSize"><size><width>110</width><height>18</height></size></property>
+    <property name="styleSheet">
+      color: #222;
+      font-weight: bold;
+    </property>
+  </widget>
+</item>
+
+
+<item>
+  <widget class="QPushButton" name="btnStartStop">
+    <property name="text">Start</property>
+    <property name="minimumSize"> <size><width>90</width><height>30</height></size> </property>
+    <property name="maximumSize"> <size><width>120</width><height>40</height></size> </property>
+    <property name="styleSheet">
+      background-color: #55ff55;
+      color: black;
+      border-radius: 4px;
+      padding: 5px;
+    </property>
+  </widget>
+</item>
+      <!-- Видео-блок -->
+      <item>
+        <layout class="QHBoxLayout" name="horizontalLayoutVideo">
+          <item>
+            <widget class="QFrame" name="frameVideo">
+              <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding"/>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayoutVideo">
+                <item>
+                  <widget class="QGraphicsView" name="videoGraphicsView">
+                    <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                        <horstretch>5</horstretch>
+                        <verstretch>5</verstretch>
+                      </sizepolicy>
+                    </property>
+                    <property name="frameShape">NoFrame</property>
+                    <property name="backgroundBrush">
+                      <brush brushstyle="SolidPattern">
+                        <color alpha="255"><red>0</red><green>0</green><blue>0</blue></color>
+                      </brush>
+                    </property>
+                  </widget>
+                </item>
+              </layout>
+            </widget>
+          </item>
+        </layout>
+      </item>
+      <!-- ... остальные элементы ... -->
+<item>
+  <widget class="QGroupBox" name="grpStatus">
+    <property name="title">Status</property>
+    <layout class="QVBoxLayout" name="layoutStatus">
+      <item>
+        <widget class="QLabel" name="lblStatus">
+          <property name="text">Standby</property>
+          <property name="styleSheet">
+            color: #009900;
+            font-weight: bold;
+            min-height: 24px;
+            background-color: #f0f8ff;
+            border-radius: 4px;
+            padding: 4px 8px;
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLabel" name="lblDistance">
+          <property name="text">Distance: -- cm</property>
+          <property name="styleSheet">
+            color: #333;
+            font-weight: normal;
+            min-height: 18px;
+            background-color: #f8f8f8;
+            border-radius: 3px;
+            padding: 2px 4px;
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QFrame" name="frameAlarmIndicator">
+          <property name="frameShape"><enum>QFrame::Box</enum></property>
+          <property name="frameShadow"><enum>QFrame::Sunken</enum></property>
+          <property name="minimumSize">
+            <size><width>20</width><height>20</height></size>
+          </property>
+          <property name="maximumSize">
+            <size><width>20</width><height>20</height></size>
+          </property>
+          <property name="styleSheet">background-color: green;</property>
+          <layout class="QVBoxLayout" name="verticalLayoutAlarm">
+            <item>
+              <widget class="QLabel" name="lblAlarmStatus">
+                <property name="text">Standby</property>
+                <property name="alignment"><set>Qt::AlignCenter</set></property>
+                <property name="styleSheet">color: green;</property>
+              </widget>
+            </item>
+          </layout>
+        </widget>
+      </item>
+    </layout>
+  </widget>
+</item>
+
+
+    </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutDefault spacing="6" margin="11"/>
+ <pixmapfunction/>
+ <resources>
+   <include location="MainWindow.qrc"/>
+ </resources>
+ <connections/>
+</UI>

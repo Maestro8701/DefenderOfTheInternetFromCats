@@ -37,10 +37,14 @@
 
 ## 🛠 **Технический стек**
   | Компонент             | Технология  
-- | **Язык**| C++ |
-- | **Машинное обучение** | YOLOv4-tiny, OpenCV               |
+- | **Язык**              | C++ 17|
+- | **Машинное обучение** | YOLOv4-tiny, OpenCV 4.11.0               |
 - | **Локальная сеть**    | WebSockets, REST API (для обмена данными) |
-- | **Аудио**   SFML 3.0 |
+- | **Аудио**             | SFML 3.0 |
+- | **GUI/Интерфейс**	  | QT 6.8.0
+- |Конфигурация	          | tomlplusplus-3.4.0
+- | **IDE**	  	  | Microsoft Visual Studio Community 2022 17.14.2 (17.14.2+36121.58) или Qt Creator
+- | **Сборка**	          | CMake ≥ 3.20
 
 📦 Установка и сборка
 Зависимости
@@ -48,17 +52,18 @@
 - CMake ≥ 3.20
 - OpenCV ≥ 4.11.0 (с модулем dnn)
 - SFML ≥ 3.0 (только sfml-audio)
+- QT ≥ 6.8.0
 - Git (для клонирования репозитория)
 
 #### Linux (Debian/Ubuntu)
 - sudo apt update
-- sudo apt install -y cmake git libopencv-dev libsfml-audio-dev
+- sudo apt install -y cmake git libopencv-dev libsfml-audio-dev qt6-base-dev
 
 #### Windows (vcpkg)
--vcpkg install opencv4 sfml3
+-vcpkg install opencv4 sfml3 qt6-base tomlplusplus
 
 #### macOS (Homebrew)
-brew install cmake opencv sfml
+brew install cmake opencv sfml qt@6
 
 #### Клонирование репозитория
 - git clone https://github.com/yourusername/DefenderOfTheInternetFromCats.git
@@ -76,7 +81,8 @@ brew install cmake opencv sfml
 - cd build
 - cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
 - cmake --build . --config Release
-- Запуск ./DefenderOfTheInternetFromCats
+- Запуск
+- ./DefenderOfTheInternetFromCats
 Примечания:
 Убедитесь, что пути к моделям (yolov4-tiny.cfg, yolov4-tiny.weights) и звукам (./multimedia/sound/) корректны.
 Для тестирования можно использовать встроенное видео:
@@ -89,6 +95,8 @@ brew install cmake opencv sfml
 
 ### 🔧 Конфигурация
 Проект поддерживает конфигурационный файл config.toml
+- Параметров YOLO
+- Настроек сети (WebSockets/REST API)
 
 ## 🖥 **Архитектура системы**
 ```mermaid
@@ -108,11 +116,9 @@ graph TD
 В командной строке выполнить:
 plantuml docs/class_diagram.puml 
 
-## Требования
-C++ 17
-QT 6.8.0
-OpenCV 4.11.0
-sfml 3.0
-Microsoft Visual Studio Community 2022 17.14.2 (17.14.2+36121.58)
+## Документация
+- https://docs.opencv.org/5.0/
+- https://www.sfml-dev.org/documentation/3.0.0/
+- https://doc.qt.io/
 
 

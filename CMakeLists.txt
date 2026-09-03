@@ -28,7 +28,7 @@ add_executable(${PROJECT_NAME}
     src/utils.cpp
     src/sound_player.cpp
     src/udp_communicator_unix.cpp
-    src/udp_communicator.cpp
+    src/udp_communicator_win.cpp
     src/main.cpp
 )
 

@@ -1,6 +1,6 @@
 #pragma once
 #include <opencv2/opencv.hpp>
-#include "udp_communicator.h"
+#include "udp_communicator_win.h"
 #include "utils.h"//Добавил
 
 class AlarmSystem {

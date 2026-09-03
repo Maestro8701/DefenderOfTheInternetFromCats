@@ -38,14 +38,23 @@
 │   ├── alarm_system.cpp
 │   ├── cat_detector.cpp
 │   ├── sound_player.cpp
-│   ├── udp_communicator.cpp
+│   ├── udp_communicator_win.cpp
+│   ├── udp_communicator_unix.cpp
 │   └── utils.cpp
 └── include/
-    ├── alarm_system.h
-    ├── cat_detector.h
-    ├── sound_player.h
-    ├── udp_communicator.h
-    └── utils.h
+│   ├── alarm_system.h
+│   ├── cat_detector.h
+│   ├── sound_player.h
+│   ├── udp_communicator_win.h
+│   ├── udp_communicator_unix.h
+│   └── utils.h
+├── tests/
+│   └── main_test.cpp
+└── ui/
+│   ├── MainWindow.cpp
+│   ├── MainWindow.h
+│   ├── MainWindow.qrc
+└── └── MainWindow.ui
 ```
 </td>
 <td valign="top">
@@ -164,5 +173,6 @@ graph TD
 C++	17	Стандарт языка
 OpenCV	4.11.0	Машинное зрение, обработка изображений
 SFML	3.0	Воспроизведение звука
+QT      6.8.0   Интерфейс
 CMake	3.20+	Сборка проекта
 GitHub Actions	—	CI/CD
